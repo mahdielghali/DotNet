@@ -9,11 +9,12 @@ namespace AM.ApplicationCore.Domain
 {
     public class Passenger
     {
+        public int Id { get; set; }
         public DateTime BirthDate { get; set; }
         public int PassportNumber { get; set; }
         public string EmailAdress { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
         public int TelNumber { get; set; }
         public ICollection<Flight> flights { get; set; }
         public override string ToString()

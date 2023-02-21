@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Services;
+using AM.Infrastructure;
 
 //Plane plane= new Plane();
 //plane.Capacity = 200;
@@ -17,11 +18,11 @@ using AM.ApplicationCore.Services;
 //Console.WriteLine(plane3.ToString());
 Passenger passenger1 = new Passenger
 {
-    FirstName = "ahmed",
-    LastName = "tlili",
-    EmailAdress = "ahmed.tlili@esprit.tn"
+    FirstName = "Mahdi",
+    LastName = "Ghali",
+    EmailAdress = "mahdi.ghali@esprit.tn"
 };
-//Console.WriteLine(passenger1.CheckProfile("Ahmed", "tnyjyt", "ahmed.tlili@esprit.tn"));
+//Console.WriteLine(passenger1.CheckProfile("Mahdi", "ghali", "mahdi.ghali@esprit.tn"));
 //Traveller traveller1 = new Traveller
 //{
 
@@ -64,3 +65,8 @@ Console.WriteLine(passenger1.FirstName + passenger1.LastName);
 passenger1.UpperFullName();
 Console.WriteLine(passenger1.FirstName + passenger1.LastName);
 
+AMContext ctx = new AMContext();
+
+ctx.Flights.Add(TestData.flight1);
+
+ctx.SaveChanges();
